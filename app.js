@@ -35,7 +35,8 @@ var the_stack = new Array();
 app.get('/', function(req, res){
   res.render('index', {
     title: 'Express',
-    stack: the_stack
+    stack: the_stack,
+    popped: false
   });
 });
 
@@ -44,14 +45,15 @@ app.get('/push', function(req, res){
 
   res.render('index', {
     title: 'Express',
-    stack: the_stack
+    stack: the_stack,
+    popped: false
   });
 });
 
 app.get('/pop', function(req, res){
   var popped = (the_stack.length)? the_stack.pop() : null;
 
-  res.render('pop', {
+  res.render('index', {
     title: 'Express',
     stack: the_stack,
     popped: popped
