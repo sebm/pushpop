@@ -1,5 +1,8 @@
 h1= title
 p Welcome to #{title}
+
+- if (popped)
+  h3 I just popped: #{popped}
   
 - if (stack.length)
   h2 The stack presently contains:
@@ -9,8 +12,3 @@ p Welcome to #{title}
     - })
 - else
   h2 The stack is empty, oh no!
-  
-p
-  a(href='push') push
-p
-  a(href='pop') pop
